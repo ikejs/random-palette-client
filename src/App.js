@@ -44,12 +44,13 @@ class App extends Component {
       <div className="App">
         <h1>Color Palette Generator</h1>
         <div className="paletteWrapper">
-          <div className="color leftRounded" style={{backgroundColor: this.state.first}}></div>
-          <div className="color" style={{backgroundColor: this.state.second}}></div>
-          <div className="color" style={{backgroundColor: this.state.third}}></div>
-          <div className="color" style={{backgroundColor: this.state.fourth}}></div>
-          <div className="color rightRounded" style={{backgroundColor: this.state.fifth}}></div>
+          <div className="color leftRounded" style={{backgroundColor: this.state.first.hsl}}></div>
+          <div className="color" style={{backgroundColor: this.state.second.hsl}}></div>
+          <div className="color" style={{backgroundColor: this.state.third.hsl}}></div>
+          <div className="color" style={{backgroundColor: this.state.fourth.hsl}}></div>
+          <div className="color rightRounded" style={{backgroundColor: this.state.fifth.hsl}}></div>
         </div>
+        <input type="text" className="HEXinput" value={this.state.third.hex}></input>
         <button className="generateButton" onClick={()=> {
           this.fetchPalette()
         }}>Generate</button>
